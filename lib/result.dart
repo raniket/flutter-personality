@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
-
   final int totalScore;
   final Function resetQuiz;
 
@@ -9,19 +8,36 @@ class Result extends StatelessWidget {
 
   String get getFinalText {
     String personality;
-    if (totalScore <= 8) personality = 'You are an inocent person';
-    else if (totalScore <= 14) personality = 'You are a good guy';
-    else if (totalScore <= 20) personality = 'You are a....  strange person!!!';
-    else personality = 'You are bad person';
+    if (totalScore <= 12)
+      personality = 'You are an inocent person. ${'\u{1F600}'}';
+    else if (totalScore <= 18)
+      personality = 'You are a good personn. ${'\u{1F601}'}';
+    else if (totalScore <= 24)
+      personality = 'You are a....  strange person!!! ${'\u{1F607}'}';
+    else
+      personality = 'You are not a good person! ${'\u{1F60B}'}';
     return personality;
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-      Text(getFinalText, style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
-      FlatButton(onPressed: resetQuiz, child: Text('Reset Quiz', style: TextStyle(color: Colors.blue),),)
-    ],);
+        Text(
+          getFinalText,
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ),
+        FlatButton(
+          color: Colors.blue,
+          splashColor: Colors.blueAccent,
+          onPressed: resetQuiz,
+          child: Text(
+            'Reset Quiz',
+            style: TextStyle(color: Colors.white),
+          ),
+        )
+      ],
+    );
   }
 }
