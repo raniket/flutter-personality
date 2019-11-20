@@ -9,11 +9,11 @@ class Result extends StatelessWidget {
   String get getFinalText {
     String personality;
     if (totalScore <= 12)
-      personality = 'You are an inocent person. ${'\u{1F600}'}';
+      personality = 'You are an inocent person! ${'\u{1F600}'}';
     else if (totalScore <= 18)
-      personality = 'You are a good personn. ${'\u{1F601}'}';
+      personality = 'You are a good person! ${'\u{1F601}'}';
     else if (totalScore <= 24)
-      personality = 'You are a....  strange person!!! ${'\u{1F607}'}';
+      personality = 'You are a strange person! ${'\u{1F607}'}';
     else
       personality = 'You are not a good person! ${'\u{1F60B}'}';
     return personality;
